@@ -1,0 +1,25 @@
+{
+  "name": "parser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Zahar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "pg": "^7.4.1",
+    "request": "^2.83.0",
+    "selenium-webdriver": "^4.0.0-alpha.1",
+    "vk-api-help": "^2.0.0",
+    "vk-auth": "^1.0.6",
+    "vk-io": "^4.0.0-alpha.10",
+    "vkapi-lite": "^1.4.2",
+    "vksdk": "^5.3.2"
+  },
+  "devDependencies": {
+    "selenium-webdriver-util": "^2.2.0"
+  }
+}

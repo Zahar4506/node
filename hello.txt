@@ -1,0 +1,347 @@
+0 Static-X
+1 atlantida project
+2 THE HATTERS (Шляпники)
+3 монеточка
+4 Люмен
+5 Скриптонит
+6 Монатик
+7 Post Malone
+8 Lil Peep
+9 Lil Peep
+10 Скриптонит & Tricky
+11 104 x Truwer
+12 Скриптонит
+13 Скриптонит
+14 Loc-Dog
+15 Loc-Dog
+16 GAZIROVKA
+17 Скриптонит
+18 Loc-Dog
+19 Станционный смотритель
+20 Станционный смотритель
+21 Thomas Mrvz
+22 HARDKISS
+23 TVOYDAR
+24 Justin Timberlake
+25 Аффинаж
+26 Markul
+27 Нигатив
+28 Meja
+29 Miyagi & Эндшпиль, NERAK
+30 Маша Тимошенко
+31 МЫ
+32 АИГЕЛ
+33 Элджей
+34 Anivar
+35 Anacondaz
+36 Anacondaz
+37 Anacondaz
+38 Anacondaz
+39 Linkin Park
+40 Scars On Broadway
+41 Linkin Park
+42 Rob Zombie
+43 Incubus
+44 Rick
+45 Eminem
+46 Nonpoint
+47 Limp Bizkit
+48 Disturbed
+49 Mudvayne
+50 Five Finger Death Punch
+51 anacondaz
+52 Gorillaz
+53 Карандаш
+54 Баста
+55 FLARE
+56 Radio Чача
+57 Обе-Рек
+58 Каста
+59 Jubilee
+60 Loqiemean
+61 Порнофильмы
+62 Порнофильмы
+63 Порнофильмы
+64 Markul feat. Oxxxymiron
+65 Каста
+66 Enter Shikari
+67 Loqiemean
+68 Порнофильмы
+69 Порнофильмы
+70 Порнофильмы
+71 Порнофильмы
+72 ПНЕВМОСЛОН
+73 ПНЕВМОСЛОН
+74 Enter Shikari
+75 The Glitch Mob
+76 Born of Osiris
+77 We Butter The Bread With Butter
+78 Fall Of Efrafa
+79 Порнофильмы
+80 Порнофильмы
+81 Порнофильмы
+82 Элджей
+83 Ленинград
+84 ПОРНОфИЛЬМЫ
+85 Обе-Рек
+86 Lori!Lori!
+87 Торба-на-Круче
+88 Обе-Рек
+89 Обе-рек
+90 Трактор боулинг
+91 Мара
+92 Илья Черт(Гр.Пилот)
+93 Дом кукол
+94 7 Раса
+95 10 Years
+96 LITTLE BIG feat. TOMMY CASH
+97 Грибы
+98 Suprême NTM
+99 DNCE
+100 Anacondaz
+101 Пикник
+103 Nightwish
+104 Noize MC
+105 Burito
+102 Nightwish
+106 Anacondaz
+107 Record Breaks
+108 ROCK RADIO (ex. РАДИО РЕКОРД)
+109 ROCK RADIO (ex. РАДИО РЕКОРД)
+110 ROCK RADIO (ex. РАДИО РЕКОРД)
+111 ROCK RADIO (ex. РАДИО РЕКОРД)
+112 Radio Record
+113 Radio Record
+114 New UrengoY
+115 ROCK PRIVET
+116 Duffy
+117 Oxxxymiron
+118 Егор Крид & Molly
+119 Don Diablo
+120 Пошлая Моли
+121 ПОШЛАЯ МОЛЛИ
+122 Robin Schulz
+123 Kokab
+124 Axwell /\ Ingrosso
+125 L.O.V.E
+126 MONATIK
+127 Porto Moris
+128 Наив
+129 Ария и Кипелов
+130 Пилот
+131 STIGMATA
+132 STIGMATA
+139 Three Days Grace
+151 Bahroma гр.
+191 PRAVADA
+243 Lifewalker
+266 Shinedown
+278 MIA
+318 Adelitas Way
+370 O. Children
+392 Demon Hunter
+411 Icon For Hire
+451 Multiverse
+495 Земфира
+516 Lincore
+536 Тараканы!
+576 Антитела
+620 Combichrist
+649 Alai Oli
+661 Otep
+701 Lori!Lori!
+753 Electric Six
+778 DubStep
+790 RasKar
+830 Stratovarius
+882 Коrsика
+911 Классика + DuB STEP (Чайковский)
+931 АнимациЯ
+955 Three Days Grace
+169 Я - ДОРОЖЕ ЗОЛОТА
+209 Big Boi
+221 Evans Blue
+248 Carla's Dreams
+300 Like A Storm
+340 White Apple Tree
+352 MicLordz & Sauce Funky
+378 Kasabian
+421 Zedd feat. Selena Gomez
+461 Simple Plan
+481 Hollywood Undead
+506 Thousand Foot Krutch
+550 Three Days Grace
+590 Lifehouse
+610 Franz Ferdinand
+631 Wednesday 13
+683 Shinedown
+723 Oomph!
+735 Panik
+756 Фліт
+808 Красные Звезды
+848 СерьГа
+860 Пилот
+897 Николай Носков
+941 Жуки
+965 Noize Mc
+985 Александр Маршал
+168 Дана Соколова feat. Скруджи
+208 нрчк
+228 TV On The Radio
+249 Yellow Claw
+293 Sigma ft. Paloma Faith
+333 UZARI
+353 Embers In Ashes
+375 Эпидемия
+426 Caro Emerald
+466 Arma Dre
+478 Гильза
+501 30.02
+553 Apocalyptica
+593 Bring Me The Horizon
+605 Gem Club
+632 Within Temptation
+676 Amaranthe
+716 U2
+736 Panik (a.k.a. Nevada Tan)
+763 Pennywise
+807 Красные Звёзды
+847 Анимация
+867 АнимациЯ
+894 Носков Николай
+946 ABBA
+970 Noize MC
+982 ТонкаяКраснаяНить
+134 Ария
+154 RITA ORA feat. Krept & Konan
+194 PRAVADA
+238 Маша и Медведи
+263 Ella Fitzgerald
+283 Chinawoman
+323 Weaving The Fate
+367 Reflekt feat. Delline Bass
+393 Nickelback & Flo Rida
+404 Ben Cocks
+444 Обе-Рек
+496 MΣ$†ΛMN ΣKCПØNΛ†
+523 Копенгаген
+535 Копенгаген
+575 АнтителА
+627 Owl City
+646 Изумрудный город
+666 Люмен
+706 Noize MC
+750 Everlast
+773 После 11
+793 RasKar, Noize MC
+833 Black Veil Brides♥
+877 Океан Ельзи
+912 Кукрыниксы
+924 Люмен ft. NTL
+948 Hollywood undead
+142 Animal Jazz
+162 Честный
+186 Hollywood Undead (RADIO TAPOK)
+230 PROSTOBAND feat. ОБЕ-РЕК
+271 MΣ$†ΛMN ΣKCПØNΛ†
+291 My Darkest Days
+315 Inner 61
+359 Е2 Знакомы
+400 Korpiklaani
+412 Обычный автобус.
+436 Milky Chance
+488 zatknись (Сатана Печет Блины punk cover)похоже на: бригадный подряд План Ломоносова 7000 evil not alone Психея ТКН Tracktor Bowling ПопКорн Vanilla Sky Король и Шут Наив КняZz ПТВП FPG Тараканы BRUTTO Distemper ышо Порт 812 Radio ЧАЧА Йорш Эдуард Суровый
+531 Знаки
+543 Skillet
+567 Ghosts Of Paraguay
+619 Marilyn Manson
+654 КняZz
+674 Beseech
+698 Lori! Lori!
+742 Rainbow
+781 Наив
+801 Обе-Рек
+825 David Garrett
+869 Volbeat
+904 Green Day
+916 Кукрыниксы
+956 Three Days Grace
+176 LITTLE BIG
+200 Копенgаgен
+220 In This Moment
+257 Мумий Тролль
+301 Creed
+325 Арсений Бородин
+345 Курара и Смысловые Галюцинации
+383 Demon Hunter
+434 Nonpoint
+458 Blur
+470 The Birthday Massacre
+509 Maroon 5
+561 Colton Dixon
+585 Sabaton
+597 Cayucas
+640 Alai Oli
+684 Age of Days
+708 Люмен
+728 Oomph!
+771 Soundgarden
+815 U.D.O.
+839 Time Out
+859 Чайф
+886 Мертвые Дельфины
+938 Billy Talent
+978 5'nizza
+177 Onlife
+201 Green Day
+213 25/17
+256 Мумий Тролль
+308 Boney M
+332 Smash Into Pieces
+344 Смысловые Галюцинации
+386 Demon Hunter
+429 Static Cycle
+453 In This Moment
+473 Anberlin
+514 Лучшие биты только здесь http://vkontakte.ru/miasmc
+558 Arctic Monkeys
+582 Oasis
+602 Kutless
+639 Alai Oli
+691 Fall Out Boy
+715 U2
+727 Oomph! feat. Marta Jandova
+764 Rise Against
+816 Times Of Grace
+840 Casual
+852 Бригадный Подряд
+889 Blue October
+933 Volbeat
+973 5'nizza
+147 Ozzie London
+159 ONUKA
+183 MiyaGi [Λ S Λ T Λ] & Эндшпиль
+235 Кукрыниксы
+274 Tetsuya Shibata
+286 Prospect Hill
+310 Hollywood Undead
+362 BY Effect
+399 Bassotronics
+419 Blazo
+443 Обе-Рек
+487 BRUTTO
+524 Gregorian
+544 Nickelback
+568 The Rasmus
+612 Penelope Cruz
+657 После 11
+669 Nino Rota
+693 Лампасы
+745 Пилот
+786 Тараканы & Noize MC
+798 ОБЕ-РЕК
+822 Plastика
+874 Провода
+903 Metal Cover
+923 Hollywood Undead
+963 Noize MC
