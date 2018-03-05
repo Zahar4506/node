@@ -16,7 +16,7 @@ app.listen(3012, function(){
 var webdriver = require('selenium-webdriver');
 const util = require('util');
 var fs = require('fs');
-//require('events').EventEmitter.defaultMaxListeners = 0;
+require('events').EventEmitter.defaultMaxListeners = 0;
 //var webdriverUtil = require('selenium-webdriver-util');
 
 
@@ -37,7 +37,7 @@ driver.get('https://vk.com/audios76995859').then(function(){
     driver.sleep(5000).then(function(){
       console.log("sleeeep___________________________________");
 
-      driver.get('https://vk.com/audios76995859').then(function(){
+      driver.get('https://vk.com/audios21613066').then(function(){
         for(var i = 0; i<100; i++){
           driver.executeScript("window.scrollBy(0,1000)");
         //  console.log(i+" scroll");
@@ -48,7 +48,7 @@ driver.get('https://vk.com/audios76995859').then(function(){
         driver.findElements(webdriver.By.css(".audio_row__performer")).then(function(cheeses){
           console.log(cheeses.length);
           console.log(cheeses.length*0.25);
-          var a1 = cheeses.length*0.25;
+          var a1 = cheeses.length*0.5;
           console.log(a1);
           a1=Math.floor(a1);
           console.log(a1+" округление");
@@ -63,29 +63,36 @@ driver.get('https://vk.com/audios76995859').then(function(){
             console.log(item, index);
           });*/
 
-  for (var i = 0; i <= a1; i++) {
+
+/*
+  for (var i = 0; i <= cheeses.length; i++) {
         console.log(i+" 1");
 
         setTimeoutPromise(20,i).then(function(i){
-
           cheeses[i].getText().then(function(text){
-
-              console.log(i+`${text}`);
+              console.log(i+` ${text}`);
                                     fs.appendFile("hello.txt", `${i} ${text}\n`, function(error){
                                       if(error) throw error; // если возникла ошибка
                                     });
-
-
-
               }, function(err){
-              console.log(`********************* `+ err);
+              console.log(i+` ${i} ********************* `+ err);
               console.log(`ОШИБКА!!!!*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_***_*_`);
+                      cheeses[i].getText().then(function(text){
+                          console.log(i+` ${text}-----------------------------------------------------------`);
+                                                fs.appendFile("hello.txt", `${i} ${text}\n`, function(error){
+                                                  if(error) throw error; // если возникла ошибка
+                              });
+                          }, function(err){
+                          console.log(i+` ${i} ********************* `+ err);
+                          console.log(`ОШИБКА!!!!*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_***_*_`);
+                        });
             });
-
 
         });
 
-        }
+    }
+*/
+
 
 
 
