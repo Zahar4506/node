@@ -15,16 +15,14 @@ app.listen(3012, function(){
 //***********************************************************
 var webdriver = require('selenium-webdriver');
 const util = require('util');
-var fs = require('fs');
-require('events').EventEmitter.defaultMaxListeners = 0;
-//var webdriverUtil = require('selenium-webdriver-util');
+var fs = require('fs');//работа с файлами
+require('events').EventEmitter.defaultMaxListeners = 0;//неограниченные запросы
+const setTimeoutPromise = util.promisify(setTimeout);
 
-
-
-
+//Запуск браузера в полноэкранном режиме
 var driver = new webdriver.Builder().forBrowser('firefox').build();
 driver.manage().window().maximize();
-const setTimeoutPromise = util.promisify(setTimeout);
+//Процесс авторизации в ВК
 driver.get('https://vk.com/audios76995859').then(function(){
     console.log("1");
     driver.findElement({id: 'email'}).click();
@@ -32,73 +30,41 @@ driver.get('https://vk.com/audios76995859').then(function(){
     driver.findElement({id: 'pass'}).click();
     driver.findElement({id: 'pass'}).sendKeys("Zx1#qwerty1906ugjoij");
     driver.findElement({id: 'login_button'}).click();
-
-
-    driver.sleep(6000).then(function(){
-      console.log("sleeeep___________________________________");
+//Ожидание 6 секунд на прогрузку авторизации
+driver.sleep(6000).then(function(){
+      console.log("sleep________________________");
 
       driver.get('https://vk.com/audios76995859').then(function(){
+        //Скролл страницы
         for(var i = 0; i<100; i++){
           driver.executeScript("window.scrollBy(0,1000)");
-        //  console.log(i+" scroll");
         }
         driver.sleep(6000).then(function(){
           console.log("sleeeep**************");
-        console.log("2");
+        //Поиск исполнителей по тегу
         driver.findElements(webdriver.By.css(".audio_row__performer")).then(function(cheeses){
           console.log(cheeses.length);
-          console.log(cheeses.length*0.25);
-          var a1 = cheeses.length*0.5;
-          console.log(a1);
-          a1=Math.floor(a1);
-          console.log(a1+" округление");
-          var a2 = cheeses.length*0.5;
-          var a3 = cheeses.length*0.75;
 
 
-
-
-          /*
-          cheeses.forEach(function(item, index, array) {
-            console.log(item, index);
-          });*/
-
-/*
-var i = cheeses.length;
-while (cheeses.length != 0) {
-console.log(i+" =i длина = "+cheeses.length);
-  cheeses[1].getText().then(function(text){
-      console.log(i+` ${text}`);
-                            fs.appendFile("hello.txt", `${i} ${text}\n`, function(error){
-                              if(error) throw error; // если возникла ошибка
-                            });
-
-
-      }, function(err){
-      console.log(i+` ${i} ********************* `+ err);
-      console.log(`ОШИБКА!!!!*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_***_*_`);
-      });
-cheeses.splice(1,1);
-i--;
-}
-*/
+//Функция парсера аудио из найденых блоков
 function pars(i){
-  setTimeoutPromise(4000,i).then(function(i){
+  setTimeoutPromise(2000,i).then(function(i){
     cheeses[i].getText().then(function(text){
         console.log(i+` ${text}`);
-                              fs.appendFile("hello.txt", `${i} ${text}\n`, function(error){
-                                if(error) throw error; // если возникла ошибка
-                              });
-        }, function(err){
+        //Запись в файл полученх результатов
+        fs.appendFile("hello.txt", `${i} ${text}\n`, function(error){
+          if(error) throw error; // если возникла ошибка
+        });
+    }, function(err){
         console.log(i+` ${i} ********************* `+ err);
         console.log(`ОШИБКА!!!!///////////////////////////////////////////////`);
         pars(i);
-});
-});
+      });
+  });
 }
 
 
-
+//Перебор треков со страницы
 for (var i = 0; i <= cheeses.length; i++) {
       console.log(i+" 1");
 pars(i);
@@ -106,61 +72,14 @@ pars(i);
 
 
 
-
-
-
-
-////////////////////////////////////////////////////
-//криво но работает
-/*
-  for (var i = 0; i <= cheeses.length; i++) {
-        console.log(i+" 1");
-
-        setTimeoutPromise(20,i).then(function(i){
-          cheeses[i].getText().then(function(text){
-              console.log(i+` ${text}`);
-                                    fs.appendFile("hello.txt", `${i} ${text}\n`, function(error){
-                                      if(error) throw error; // если возникла ошибка
-                                    });
-              }, function(err){
-              console.log(i+` ${i} ********************* `+ err);
-              console.log(`ОШИБКА!!!!*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_***_*_`);
-                      cheeses[i].getText().then(function(text){
-                          console.log(i+` ${text}-----------------------------------------------------------`);
-                                                fs.appendFile("hello.txt", `${i} ${text}\n`, function(error){
-                                                  if(error) throw error; // если возникла ошибка
-                              });
-                          }, function(err){
-                          console.log(i+` ${i} ********************* `+ err);
-                          console.log(`ОШИБКА!!!!*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_***_*_`);
-                        });
-            });
-
-        });
-
-    }
-*/
-
-
-
-
-
-
       },function(){console.log("Не найден ни один трек");});
       });
 });
-    });
 
-  });
-
+});
 
 
-
-
-//driver.wait(until.elementLocated(By.id('foo')), 10000,'Мое сообщение');
-//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-//driver.manage().setTimeouts({implicit:100,pageLoad:1000,script:100});
-//driver.manage().getTimeouts();
+},function(){console.log("Не удалось авторизоваться");});
 
 //var a = driver.getPageSource();
 //console.log(a);
@@ -168,3 +87,9 @@ pars(i);
 //driver.get('https://vk.com/zahar4506');
 //driver.quit();
 //************************************************************
+
+
+/*  //вывод ошикбки сервера
+cheeses.forEach(function(item, index, array) {
+  console.log(item, index);
+});*/
