@@ -83,7 +83,7 @@ i--;
 }
 */
 function pars(i){
-  setTimeoutPromise(20,i).then(function(i){
+  setTimeoutPromise(4000,i).then(function(i){
     cheeses[i].getText().then(function(text){
         console.log(i+` ${text}`);
                               fs.appendFile("hello.txt", `${i} ${text}\n`, function(error){
@@ -92,42 +92,16 @@ function pars(i){
         }, function(err){
         console.log(i+` ${i} ********************* `+ err);
         console.log(`ОШИБКА!!!!///////////////////////////////////////////////`);
-        pars1(i);
+        pars(i);
 });
 });
 }
 
-function pars1(i){
-  setTimeoutPromise(20,i).then(function(i){
-    cheeses[i].getText().then(function(text){
-        console.log(i+` ${text}`);
-                              fs.appendFile("hello.txt", `${i} ${text}\n`, function(error){
-                                if(error) throw error; // если возникла ошибка
-                              });
-        }, function(err){
-        console.log(i+` ${i} ********************* `+ err);
-        console.log(`ОШИБКА!!!!//*/*/*/*/*/*/*/*/*/*/*/*/*/**`);
-});
-});
-}
 
 
 for (var i = 0; i <= cheeses.length; i++) {
       console.log(i+" 1");
-
-      setTimeoutPromise(20,i).then(function(i){
-        cheeses[i].getText().then(function(text){
-            console.log(i+` ${text}`);
-                                  fs.appendFile("hello.txt", `${i} ${text}\n`, function(error){
-                                    if(error) throw error; // если возникла ошибка
-                                  });
-            }, function(err){
-            console.log(i+` ${i} ********************* `+ err);
-            console.log(`ОШИБКА!!!!*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_***_*_`);
-            pars(i);
-          });
-      });
-
+pars(i);
   }
 
 
