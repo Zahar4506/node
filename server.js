@@ -62,8 +62,27 @@ driver.get('https://vk.com/audios76995859').then(function(){
           cheeses.forEach(function(item, index, array) {
             console.log(item, index);
           });*/
+var i = cheeses.length;
+while (i != cheeses.length) {
+
+console.log(i+" =i длина = "+cheeses.length);
+cheeses.splice(1,1);
+  cheeses[1].getText().then(function(text){
+      console.log(i+` ${text}`);
+
+                            fs.appendFile("hello.txt", `${i} ${text}\n`, function(error){
+                              if(error) throw error; // если возникла ошибка
+                            });
+
+      }, function(err){
+      console.log(i+` ${i} ********************* `+ err);
+      console.log(`ОШИБКА!!!!*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_***_*_`);
+      });
 
 
+
+
+}
 /*
   for (var i = 0; i <= cheeses.length; i++) {
         console.log(i+" 1");
