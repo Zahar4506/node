@@ -1,0 +1,72 @@
+*******************************************************************************
+-- Table: public.musicband
+
+-- DROP TABLE public.musicband;
+
+CREATE TABLE public.musicband
+(
+    musicbandid integer NOT NULL DEFAULT nextval('musicband_musicbandid_seq'::regclass),
+    nameband character varying COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT unic_musicbandid PRIMARY KEY (musicbandid)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.musicband
+    OWNER to postgres;
+*******************************************************************************
+
+
+
+*******************************************************************************
+-- Table: public.vkuser
+
+-- DROP TABLE public.vkuser;
+
+CREATE TABLE public.vkuser
+(
+    uservkid integer NOT NULL,
+    fname character varying(255) COLLATE pg_catalog."default",
+    lname character varying(255) COLLATE pg_catalog."default",
+    CONSTRAINT vkuser_pkey PRIMARY KEY (uservkid),
+    CONSTRAINT unic_vkuserid UNIQUE (uservkid)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.vkuser
+    OWNER to postgres;
+*******************************************************************************
+
+
+
+*******************************************************************************
+-- Table: public.vkuser_musicband
+
+-- DROP TABLE public.vkuser_musicband;
+
+CREATE TABLE public.vkuser_musicband
+(
+    vkuserid integer,
+    musicbandid integer NOT NULL DEFAULT nextval('vkuser_musicband_musicbandid_seq'::regclass),
+    CONSTRAINT fk_music FOREIGN KEY (musicbandid)
+        REFERENCES public.musicband (musicbandid) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT fr_vkuser FOREIGN KEY (vkuserid)
+        REFERENCES public.vkuser (uservkid) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.vkuser_musicband
+    OWNER to postgres;
+*******************************************************************************
