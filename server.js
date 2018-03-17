@@ -10,6 +10,18 @@ app.listen(3012, function(){
 */
 
 //***********************************************************
+
+var Pool = require('pg').Pool;
+var config = {
+  host: 'localhost',
+  user: 'postgres',
+  password: '1',
+  database: 'vk',
+};
+
+var pool = new Pool(config);
+
+
 var webdriver = require('selenium-webdriver');
 const util = require('util');
 var fs = require('fs');//работа с файлами
@@ -36,6 +48,7 @@ function userPars(idVK){
   setTimeoutPromise(2000,i).then(function(i){
    cheeses[i].getText().then(function(text){
     console.log(i+` ${text}`);
+    set_hits(`${text}`);
     //Запись в файл полученх результатов
     fs.appendFile("hello.txt", `${i} ${text}\n`, function(error){
       if(error) throw error; // если возникла ошибка
@@ -49,7 +62,8 @@ function userPars(idVK){
   }
 
   //Перебор треков со страницы
-  for (var i = 0; i <= cheeses.length; i++) {
+  //for (var i = 0; i <= cheeses.length; i++) {
+  for (var i = 0; i <= 30; i++) {
   console.log(i+" 1");
   pars(i);
 
@@ -108,3 +122,16 @@ var idVK="https://vk.com/audios76995859";
 cheeses.forEach(function(item, index, array) {
   console.log(item, index);
 });*/
+
+async function get_hits(){
+  var response = await pool.query("SELECT * FROM public.musicband ORDER BY musicbandid ASC");
+  console.log(response.rows);
+}
+//var name = "ROCK";
+
+//set_hits(name);
+get_hits();
+ async function set_hits(musicbandname){
+   var response = await pool.query("INSERT INTO public.musicband(nameband) VALUES ('"+musicbandname+"')");
+   console.log(response.rows);
+ }
