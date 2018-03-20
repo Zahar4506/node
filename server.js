@@ -48,7 +48,8 @@ function userPars(idVK){
   setTimeoutPromise(2000,i).then(function(i){
    cheeses[i].getText().then(function(text){
     console.log(i+` ${text}`);
-    set_hits(`${text}`);
+//    set_hits(`${text}`);
+//    set_hits1(`${text}`);
     //Запись в файл полученх результатов
     fs.appendFile("hello.txt", `${i} ${text}\n`, function(error){
       if(error) throw error; // если возникла ошибка
@@ -63,7 +64,7 @@ function userPars(idVK){
 
   //Перебор треков со страницы
   //for (var i = 0; i <= cheeses.length; i++) {
-  for (var i = 0; i <= 30; i++) {
+  for (var i = 0; i <= cheeses.length; i++) {
   console.log(i+" 1");
   pars(i);
 
@@ -92,9 +93,18 @@ driver.get('https://vk.com/audios76995859').then(function(){
 //Ожидание 6 секунд на прогрузку авторизации
 driver.sleep(6000).then(function(){
       console.log("sleep________________________");
-
-var idVK="https://vk.com/audios76995859";
- userPars(idVK);
+//urlы пользователей через разделитель ", "
+var idVK='https://vk.com/audios76995859, https://vk.com/audios392240310';
+var arr = idVK.split(', ');
+for (let i = 0; i < arr.length; i++) {
+  setTimeout(() => {
+    driver.sleep(5000).then(function(){
+    console.log("Pause 0000000000000000 "+i);
+    userPars(arr[i]);
+});}, 5000);
+  console.log('Вам сообщение --------------------' + arr[i]);
+}
+ //userPars(arr[0]);
 /*
  setTimeoutPromise(10000).then(function(){console.log("ждемс----------------------10");
  fs.appendFile("hello.txt", `\n\n\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\n\n\n`, function(error){
@@ -124,14 +134,33 @@ cheeses.forEach(function(item, index, array) {
 });*/
 
 async function get_hits(){
-  var response = await pool.query("SELECT * FROM public.musicband ORDER BY musicbandid ASC");
-  console.log(response.rows);
+  try {
+    var response = await pool.query("SELECT * FROM public.musicband ORDER BY musicbandid ASC");
+    console.log(response.rows);
+  } catch (e) {
+    console.log("MY ERROR",e);
+  }
 }
 //var name = "ROCK";
 
 //set_hits(name);
 get_hits();
  async function set_hits(musicbandname){
-   var response = await pool.query("INSERT INTO public.musicband(nameband) VALUES ('"+musicbandname+"')");
-   console.log(response.rows);
+   try {
+     var response = await pool.query("INSERT INTO public.musicband(nameband) VALUES (upper('"+musicbandname+"'))");
+     console.log(response.rows);
+   } catch (e) {
+console.log("MY ERROR",e);
+   }
+
  }
+
+  async function set_hits1(musicbandname){
+    try {
+      var response = await pool.query("INSERT INTO public.vkuser_musicband(vkuserid, musicbandid)	VALUES ('12', (SELECT musicbandid FROM public.musicband WHERE nameband = upper('"+musicbandname+"')))");
+      console.log(response.rows);
+    } catch (e) {
+ console.log("MY ERROR",e);
+    }
+
+  }
