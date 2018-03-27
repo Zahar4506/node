@@ -41,14 +41,14 @@ function userPars(idVK){
     driver.sleep(10000).then(function(){
       console.log("sleeeep**************");
     //Поиск исполнителей по тегу
-    driver.findElements(webdriver.By.css(".audio_row__performer")).then(function(cheeses){
+     driver.findElements(webdriver.By.css(".audio_row__performer")).then(function(cheeses){
       console.log(cheeses.length);
   //Функция парсера аудио из найденых блоков
   function pars(i){
   setTimeoutPromise(2000,i).then(function(i){
    cheeses[i].getText().then(function(text){
     console.log(i+` ${text}`);
-//    set_hits(`${text}`);
+   set_hits(`${text}`).then(function(){},function(Error){console.log(Error+"qweqweqweqweqwe");});
 //    set_hits1(`${text}`);
     //Запись в файл полученх результатов
     fs.appendFile("hello.txt", `${i} ${text}\n`, function(error){
@@ -67,10 +67,12 @@ function userPars(idVK){
   for (var i = 0; i <= cheeses.length; i++) {
   console.log(i+" 1");
   pars(i);
-
   }
 
   },function(){console.log("Не найден ни один трек");});
+
+
+
   });
 });
 }
@@ -94,7 +96,7 @@ driver.get('https://vk.com/audios76995859').then(function(){
 driver.sleep(6000).then(function(){
       console.log("sleep________________________");
 //urlы пользователей через разделитель ", "
-var idVK='https://vk.com/audios76995859, https://vk.com/audios392240310';
+var idVK='https://vk.com/audios76995859';//, https://vk.com/audios392240310';
 var arr = idVK.split(', ');
 for (let i = 0; i < arr.length; i++) {
   setTimeout(() => {
@@ -145,14 +147,16 @@ async function get_hits(){
 
 //set_hits(name);
 get_hits();
- async function set_hits(musicbandname){
-   try {
-     var response = await pool.query("INSERT INTO public.musicband(nameband) VALUES (upper('"+musicbandname+"'))");
-     console.log(response.rows);
-   } catch (e) {
-console.log("MY ERROR",e);
-   }
-
+  function set_hits(musicbandname){
+   var mypromise = new Promise(function(resolve,reject){
+     try { var response =  pool.query("INSERT INTO public.musicband(nameband) VALUES (upper('"+musicbandname+"'))");
+           console.log(response.rows);
+           resolve("Положил в базу");
+     } catch (e) {
+       reject(Error("Не положил в базу"));
+       console.log("MY ERROR",e);
+         }
+   });
  }
 
   async function set_hits1(musicbandname){
